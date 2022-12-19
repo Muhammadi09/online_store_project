@@ -1,0 +1,3 @@
+docker exec -it online_store_db_1 psql -U postgres
+
+docker-compose exec web rm -r accounts/migrations

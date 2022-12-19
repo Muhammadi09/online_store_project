@@ -1,0 +1,58 @@
+Ecommerce Website
+
+Summary:
+Website where a customer/guest is able to purchase products, choose a sipping method and pay total.
+
+Stakeholders:
+    1. Staff (various permissions)
+    2. Customer
+    3. Guest
+
+Requirements (Stakeholder):
+    1. Staff is able to add products to inventory
+    2. Staff can sign up as User
+    3. Customer can sign up as User
+    4. Customer can add items to basket before ordering.
+    5. Customer can complete order with chosen shipping method and make purchase.
+    6. Customer can view order history
+    7. Staff with relevant permissions can view all sales activity.
+    8. Guest can complete order with chosen shipping method and make purchase.
+    9. Customer and Guest can choose/change quantity of product to purchase.
+    10. Customer can delete account.
+    11. Customer can change password / lost password.
+    12. Customer can leave Reviews on products purchased.
+    13. Users/Guests are able to search for products.
+    14. Customer can add products to 'wish list'
+
+Requirements (System)
+    1. Caching - When items are added to basket. Items remain even if not purchased and visited another site.
+    2. Search functionality - by product and category
+    3. Shipping - multiple shipping methods and price.
+    4. Payment system - Visa/Paypal/Stripe
+    [OPTIONAL]
+        1. Recommended products to customer based on purchase and views.
+
+
+Segments
+    1. User accounts architecture
+    2. Products
+    3. Order architecture
+
+
+User Account architecture
+    1. Staff account(s)
+        - Admin
+        - Sales
+        
+    2. Customer account
+    3. Guests
+
+
+Tasks
+    DONE 1. Change Customer model to include fistname, lastname, email, gender, ContactDetails
+        - Add ContactDetails model, form, admin
+        
+    DONE 2. Update admin page to reflect task 1
+
+    3. userform, customer, contactDetail must be all valid then save.
+    3. django-all-auth (to remove username)
