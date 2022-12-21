@@ -4,9 +4,7 @@
     <h2>Sign Up</h2>
     <form action="{% url 'signup'%}" method="post">
     {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ customer_form.as_p }}
-    {{ customer_contact_details_form.as_p }}
+    {{ form.as_p}}
     <button class="tn btn-outline-success" type="submit">Create account</button>
     </form>
 {% endblock content %}

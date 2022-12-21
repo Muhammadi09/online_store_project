@@ -54,5 +54,5 @@ Tasks
         
     DONE 2. Update admin page to reflect task 1
 
-    3. userform, customer, contactDetail must be all valid then save.
     3. django-all-auth (to remove username)
+        - SIGNUP PROBLEM - username is being duplicated as its always blank. signup needs to use and override allauth signup form.
