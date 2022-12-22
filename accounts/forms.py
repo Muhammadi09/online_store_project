@@ -13,12 +13,13 @@ class CustomerSignupForm(SignupForm):
     email = forms.EmailField(max_length=254)
     GENDER_CHOICES = (('male', 'male'), ('female', 'female'),)
     gender = forms.ChoiceField(choices = GENDER_CHOICES)
+    phone_number = forms.CharField(max_length=11)
 
     address1 = forms.CharField(max_length=100)
     address2 = forms.CharField(max_length=100)
     city = forms.CharField(max_length=50)
     post_code = forms.CharField(max_length=20)
-    phone_number = forms.CharField(max_length=11)
+    
 
     def save(self, request):
         user = super(CustomerSignupForm, self).save(request)
@@ -28,13 +29,14 @@ class CustomerSignupForm(SignupForm):
             last_name = self.cleaned_data.get('last_name'),
             email = self.cleaned_data.get('email'),
             gender = self.cleaned_data.get('gender'),
+            phone_number = self.cleaned_data.get('phone_number'),
         )
         contact_details_user = ContactDetails(
             address1 = self.cleaned_data.get('address1'),
             address2 = self.cleaned_data.get('address2'),
             city = self.cleaned_data.get('city'),
             post_code = self.cleaned_data.get('post_code'),
-            phone_number = self.cleaned_data.get('phone_number'),
+            
         ) 
         customer_user.save()
         contact_details_user.save()
@@ -54,21 +56,21 @@ class UserRegChangeForm(UserChangeForm):
         fields = ('email', 'first_name', 'last_name')
 
 
-class CustomerRegForm(forms.ModelForm):
+# class CustomerRegForm(forms.ModelForm):
 
-    class Meta:
-        model = Customer
-        fields = ('gender',)
+#     class Meta:
+#         model = Customer
+#         fields = ('gender',)
     
-class CustomerRegChangeForm(UserChangeForm):
+# class CustomerRegChangeForm(UserChangeForm):
 
-    class Meta:
-        model = Customer
-        fields = ('gender',)
+#     class Meta:
+#         model = Customer
+#         fields = ('gender',)
     
 
-class ContactDetailsRegForm(forms.ModelForm):
+# class ContactDetailsRegForm(forms.ModelForm):
     
-    class Meta:
-        model = ContactDetails
-        fields = ('address1', 'address2', 'city', 'post_code', 'phone_number',)
+#     class Meta:
+#         model = ContactDetails
+#         fields = ('address1', 'address2', 'city', 'post_code', 'phone_number',)

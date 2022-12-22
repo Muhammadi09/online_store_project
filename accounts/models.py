@@ -10,6 +10,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=254)
+    phone_number = models.CharField(max_length=11, default='')
     GENDER_CHOICES = (('male', 'male'), ('female', 'female'),)
 
     gender = models.CharField(
@@ -31,7 +32,6 @@ class ContactDetails(models.Model):
     address2 = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
     post_code = models.CharField(max_length=20)
-    phone_number = models.CharField(max_length=11)
     
     def __str__(self):
         return "{0}, {1}, {2}".format(self.address1, self.city, self.post_code)

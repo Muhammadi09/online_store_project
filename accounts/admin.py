@@ -21,7 +21,6 @@ class CustomerAdmin(admin.ModelAdmin):
 
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
-#admin.site.register(Customer)
 admin.site.register(ContactDetails)
 
 

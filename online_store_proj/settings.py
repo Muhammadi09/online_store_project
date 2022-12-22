@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     #third_party
     'allauth',
     'allauth.account',
+    'crispy_forms',
 
     #local
     'pages.apps.PagesConfig',
@@ -124,6 +125,9 @@ STATICFILES_FINDERS = [
 "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+#CRISPY FORMS
+CRISPY_TEMPLATE_PACK = 'bootstrap'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -142,6 +146,7 @@ AUTHENTICATION_BACKENDS = (
 'allauth.account.auth_backends.AuthenticationBackend',
 )
 ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True 

@@ -10,8 +10,10 @@ Stakeholders:
 
 Requirements (Stakeholder):
     1. Staff is able to add products to inventory
+        -Products to be added to store.
+
     2. Staff can sign up as User
-    3. Customer can sign up as User
+    DONE 3. Customer can sign up as User
     4. Customer can add items to basket before ordering.
     5. Customer can complete order with chosen shipping method and make purchase.
     6. Customer can view order history
@@ -45,8 +47,14 @@ User Account architecture
         - Sales
         
     2. Customer account
+       DONE - Add customer model
+       DONE - Create sign up
+        - Customer can change their details
+
     3. Guests
 
+Product
+    - Add Product model
 
 Tasks
     DONE 1. Change Customer model to include fistname, lastname, email, gender, ContactDetails
@@ -54,5 +62,7 @@ Tasks
         
     DONE 2. Update admin page to reflect task 1
 
-    3. django-all-auth (to remove username)
-        - SIGNUP PROBLEM - username is being duplicated as its always blank. signup needs to use and override allauth signup form.
+    DONE 3. django-all-auth (to remove username)
+        SIGNUP PROBLEM - username is being duplicated as its always blank. signup needs to use and override allauth signup form.
+
+    4. Add products model 

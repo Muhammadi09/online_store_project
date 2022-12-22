@@ -2,3 +2,4 @@ Django>=3.8
 psycopg2-binary>=2.8
 django-use-email-as-username
 django-allauth
+django-crispy-forms
