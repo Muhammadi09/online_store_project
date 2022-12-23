@@ -65,4 +65,6 @@ Tasks
     DONE 3. django-all-auth (to remove username)
         SIGNUP PROBLEM - username is being duplicated as its always blank. signup needs to use and override allauth signup form.
 
-    4. Add products model 
+    DONE 4. Add Products model 
+     5. Add Category model
+        - Change the choices to charfield
