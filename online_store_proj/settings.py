@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     #local
+    'products.apps.ProductsConfig',
     'pages.apps.PagesConfig',
     'accounts',
 ]
@@ -114,8 +115,12 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files 
+# (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
