@@ -6,18 +6,7 @@
     <h2>Sign Up</h2>
     <form action="{% url 'signup'%}" method="post" class="form-control">
     {% csrf_token %}
-    <p>{{form.first_name|as_crispy_field}}</p>
-    <p>{{form.last_name|as_crispy_field}}</p>
-    <p>{{form.gender|as_crispy_field}}</p>
-    <p>{{form.phone_number|as_crispy_field}}</p>
-    <p>{{form.email|as_crispy_field}}</p>
-    <p>{{form.password1|as_crispy_field}}</p>
-    <hr>
-    <h5>Address details</h5>
-    <p>{{form.address1|as_crispy_field}}</p>
-    <p>{{form.address2|as_crispy_field}}</p>
-    <p>{{form.city|as_crispy_field}}</p>
-    <p>{{form.post_code|as_crispy_field}}</p>
+    <p>{{ form.as_p}}</p>
     <button class="btn btn-warning" type="submit">Create account</button>
     </form>
 {% endblock content %}

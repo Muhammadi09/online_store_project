@@ -54,17 +54,47 @@ User Account architecture
     3. Guests
 
 Product
-    - Add Product model
+    - DONE Add Product model
 
 Tasks
-    DONE 1. Change Customer model to include fistname, lastname, email, gender, ContactDetails
-        - Add ContactDetails model, form, admin
+
+    USER ACCOUNT ARCHITECTURE
+
+        DONE 1. Change Customer model to include fistname, lastname, email, gender, ContactDetails
+            - Add ContactDetails model, form, admin
+            
+        DONE 2. Update admin page to reflect task 1
+
+        DONE 3. django-all-auth (to remove username)
+            DONE  - SIGNUP PROBLEM - username is being duplicated as its always blank. signup needs to use and override allauth signup form.
+
+        TODO 4. Password reset and change
+            -email confirmation link
+                - have email configuration setup (SMTP etc)
+
+
+        DONE 5. Edit Customer/User information 
+            - Edit Customer.firstname, lastname, email, phone_number
+            
+
+        TODO 6. Profile Management
+            DONE - profile page 
+                   address Management           
+
+
+            -Permissions setup
         
-    DONE 2. Update admin page to reflect task 1
 
-    DONE 3. django-all-auth (to remove username)
-        SIGNUP PROBLEM - username is being duplicated as its always blank. signup needs to use and override allauth signup form.
 
-    DONE 4. Add Products model 
-     5. Add Category model
-        - Change the choices to charfield
+
+
+        
+    PRODUCT ARCHITECTURE
+
+        DONE 4. Add Products model 
+        
+        DONE 5. Add Category model
+
+        DONE 6. Display categories in a navbar
+        
+        7. Display products by categories on the homepage

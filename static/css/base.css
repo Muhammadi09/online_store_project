@@ -1,0 +1,16 @@
+.row{
+    padding:30px;
+}
+.card{
+    width: 13.5rem;
+}
+.h3{
+    color:#0d2e49; 
+    font-weight: bold;
+}
+.footer{
+    background-color: #0d2e49;
+}
+footer{
+    color: white;
+}

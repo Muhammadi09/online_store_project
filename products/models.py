@@ -3,19 +3,7 @@ from django.db import models
 
 class Category(models.Model):
 
-    CATEGORY_CHOICES = (
-        ('film', 'Film'), 
-        ('home', 'Home'),
-        ('clothes', 'Clothes'),
-        ('health', 'Health'),
-        ('electronic', 'Electronic'),
-        ('misc', 'Misc'),
-    )
-    category_name = models.CharField(
-        max_length=25,
-        choices=CATEGORY_CHOICES,
-        default='misc'
-    )
+    category_name = models.CharField(max_length=25,default='misc')
 
     def __str__(self):
         return self.category_name

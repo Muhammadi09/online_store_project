@@ -2,25 +2,16 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 class CustomUser(AbstractUser):
-    pass
+    is_customer = models.BooleanField('customer status',default=False)
+    
 
 
 class Customer(models.Model):
-    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE, related_name='customer_profile')
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=254)
+    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE, primary_key=True, related_name='customer_profile')
     phone_number = models.CharField(max_length=11, default='')
-    GENDER_CHOICES = (('male', 'male'), ('female', 'female'),)
 
-    gender = models.CharField(
-        max_length=7,
-        choices=GENDER_CHOICES,
-        default='male'
-    )
-    
     def __str__(self):
-        return "{0} {1} | {2} | {3}".format(self.first_name, self.last_name, self.email, self.gender)
+        return "ID: {0} | Name: {1} {2} | Email: {3} ".format(self.user.pk, self.user.first_name, self.user.last_name, self.user.email)
 
 
 class ContactDetails(models.Model):
