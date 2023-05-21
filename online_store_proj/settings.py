@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     #local
+    'cart.apps.CartConfig',
     'products.apps.ProductsConfig',
     'pages.apps.PagesConfig',
     'accounts',
@@ -146,6 +147,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 SITE_ID = 1
+
 AUTHENTICATION_BACKENDS = (
 'django.contrib.auth.backends.ModelBackend',
 'allauth.account.auth_backends.AuthenticationBackend',
@@ -155,5 +157,11 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True 
+
+#EMAIL_BACKEND = 'django_ses.SESBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'admin@djangoonlinestore.com'
+AWS_ACCESS_KEY_ID = 'AKIA2XHILPYJHS3PPRJA'
+AWS_SECRET_ACCESS_KEY = '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'
+
 ACCOUNT_SESSION_REMEMBER = True

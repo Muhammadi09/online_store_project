@@ -77,12 +77,13 @@ Tasks
             - Edit Customer.firstname, lastname, email, phone_number
             
 
-        TODO 6. Profile Management
+        IN PROGRESS 6. Profile Management
             DONE - profile page 
-                   address Management           
+            DONE   address Management - Create Address field to customer?
+            DONE          - research on_delete (why is the address instance getting deleted also?)           
+            TODO   Add address form for Customer 
 
-
-            -Permissions setup
+                    -Permissions setup
         
 
 

@@ -4,3 +4,4 @@ django-use-email-as-username
 django-allauth
 django-crispy-forms
 pillow
+django-ses

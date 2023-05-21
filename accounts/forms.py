@@ -2,11 +2,12 @@ from django.contrib.auth import get_user_model
 from django import forms
 from django.forms import ModelForm
 from allauth.account.forms import SignupForm
-from .models import Customer
+from .models import Customer,Address
 from django.contrib.auth.models import Group
 
 customUser = get_user_model()
 
+#Customer sign up form. Also used for User sign up
 class CustomerSignupForm(SignupForm):
 
     first_name = forms.CharField(max_length=30)
@@ -30,15 +31,26 @@ class CustomerSignupForm(SignupForm):
         customer.save()
         
         return user
-       
+
+#Address details form
+class AddressForm(forms.Form):
+    address1 = forms.CharField(max_length=50)
+    address2 = forms.CharField(max_length=50)
+    city = forms.CharField(max_length=30)
+    post_code = forms.CharField(max_length=10)
+
+
+
+#Form which will be used to edit the customer
 class CustomerForm(ModelForm):
     class Meta:
         model = Customer
         fields = ['phone_number']
 
-
+#Form which will be used to edit the user
 class UserForm(ModelForm):
     class Meta:
         model = get_user_model()
         fields = ['first_name', 'last_name', 'email']
+
 

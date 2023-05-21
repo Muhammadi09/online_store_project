@@ -1,15 +1,16 @@
 {%extends 'base.html'%}
 {%block content%}
-{% comment %} <div class="container">
+<div class="container">
     <div class="row justify-content-center">
-        <h3 style="color:#0d2e49; font-weight: bold;">Books</h3>
+        <h3>Books</h3>
         {%for book in object_list%}
             {%if book.category.category_name == "books" and forloop.counter0 < 5%}
                 <div class="card">
                     <img class="card-img-top" src="{{book.cover.url}}" alt="{{book.title}}" style=" object-fit:cover">
                     <div class="card-body">
                         <h6 class="card-title">{{book.title}}</h6>
-                        <button class="btn btn-sm btn-warning">See details</button>
+                        <a href=""><button class="btn btn-sm btn-warning">See details</button></a>
+                        <a href=""><button class="btn btn-sm btn-info">Add to cart</button></a>
                     </div>
                 </div>
             {%endif%}
@@ -25,11 +26,12 @@
                     <img class="card-img-top" src="{{stationary.cover.url}}" alt="{{stationary.title}}" style=" object-fit:cover">
                     <div class="card-body">
                         <h6 class="card-title">{{stationary.title}}</h6>
-                        <button class="btn btn-sm btn-warning">See details</button>
+                        <a href=""><button class="btn btn-sm btn-warning">See details</button></a>
+                        <a href=""><button class="btn btn-sm btn-info">Add to cart</button></a>
                     </div>
                 </div>
             {%endif%}
         {%endfor%}
     </div>
-</div> {% endcomment %}
+</div>
 {%endblock content%}

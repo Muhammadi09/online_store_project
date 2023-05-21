@@ -11,8 +11,21 @@
                     <p>Name: {{user.first_name.title}} {{user.last_name.title}}</p>
                     <p>Email: {{user.email}}</p>
                     <p>Phone number: {{customer.phone_number}}</p> 
-                    
                     <a href="{% url 'profile_edit' user.pk%}" class="btn btn-sm btn-primary">Update Profile</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Shipping</h4>
+                        {% for address in customer.addresses.all %}
+                        <div>
+                        <p><a href="{% url 'update_address' customer.pk address.id %}">{{ address.address1 }}, {{ address.address2}}, {{ address.city }}, {{ address.post_code }}</a></p>
+                        
+                        {% empty %}
+                          No addresses found.
+                        {% endfor %}
+                        </div> 
+                    <a href="{% url 'add_address' user.pk%}" style="font-size:12px;">Add Address</a>
                 </div>
             </div>
         </div>
